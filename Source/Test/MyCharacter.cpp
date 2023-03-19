@@ -35,6 +35,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAxis(TEXT("MoveY"), this, &AMyCharacter::MoveY);
 	PlayerInputComponent->BindAxis(TEXT("TurnYaw"), this, &AMyCharacter::AddControllerYawInput);
 	PlayerInputComponent->BindAxis(TEXT("TurnPitch"), this, &AMyCharacter::AddControllerPitchInput);
+	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &AMyCharacter::Jump);
 }
 
 void AMyCharacter::MoveX(float AxisValue)
