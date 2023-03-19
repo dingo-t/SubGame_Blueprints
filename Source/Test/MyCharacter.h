@@ -14,6 +14,7 @@ class TEST_API AMyCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AMyCharacter();
+
 	
 
 protected:
