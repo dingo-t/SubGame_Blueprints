@@ -31,18 +31,18 @@ void AMyCharacter::Tick(float DeltaTime)
 void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	SetPlayerInputComponent->BindAxis(TEXT("MoveX"), this, &AMyCharacter::MoveX);
-	SetPlayerInputComponent->BindAxis(TEXT("MoveY"), this, &AMyCharacter::MoveY);
-	SetPlayerInputComponent->BindAxis(TEXT("TurnYaw"), this, &AMyCharacter::AddControllerYawInput);
-	SetPlayerInputComponent->BindAxis(TEXT("TurnPitch"), this, &AMyCharacter::AddControllerPitchInput);
+	PlayerInputComponent->BindAxis(TEXT("MoveX"), this, &AMyCharacter::MoveX);
+	PlayerInputComponent->BindAxis(TEXT("MoveY"), this, &AMyCharacter::MoveY);
+	PlayerInputComponent->BindAxis(TEXT("TurnYaw"), this, &AMyCharacter::AddControllerYawInput);
+	PlayerInputComponent->BindAxis(TEXT("TurnPitch"), this, &AMyCharacter::AddControllerPitchInput);
 }
 
 void AMyCharacter::MoveX(float AxisValue)
 {
-	AddMovementInput(GetActorForwardVector()* AxisValue)
+	AddMovementInput(GetActorForwardVector()* AxisValue);
 }
 
 void AMyCharacter::MoveY(float AxisValue)
 {
-	AddMovementInput(GetActorRightVector()* AxisValue)
+	AddMovementInput(GetActorRightVector()* AxisValue);
 }
